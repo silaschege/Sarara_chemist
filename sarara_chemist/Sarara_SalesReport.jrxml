@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2a176740-df93-40d4-8016-493f652909d2">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     Sales.`Customer_Name` AS Sales_Customer_Name,
+     Sales.`Item` AS Sales_Item,
+     Sales.`Quantity` AS Sales_Quantity,
+     Sales.`Phone` AS Sales_Phone
+FROM
+     `Sales` Sales]]>
+	</queryString>
+	<field name="Sales_Customer_Name" class="java.lang.String"/>
+	<field name="Sales_Item" class="java.lang.String"/>
+	<field name="Sales_Quantity" class="java.lang.Integer"/>
+	<field name="Sales_Phone" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="127" y="18" width="217" height="36" uuid="88b7fe6b-de3e-49d9-96d6-83dd3656ddb9"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Sales Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="4" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="11" y="2" width="100" height="20" uuid="b2999792-a6b2-490b-9b78-edbc57ff59bc"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="159" y="2" width="100" height="20" uuid="4c6ae078-117f-4667-847e-9482801a9ddd"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Item]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="0" width="100" height="20" uuid="5114002a-7a44-4811-ae48-4dc054ae9282"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="2" width="120" height="20" uuid="2b55572e-19c1-49c6-9891-9942c27277d6"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Phone Number]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="57" splitType="Stretch">
+			<textField>
+				<reportElement x="11" y="15" width="134" height="20" uuid="b049af60-06ef-4f98-b93b-a271ed35ddde"/>
+				<textFieldExpression><![CDATA[$F{Sales_Customer_Name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="159" y="15" width="100" height="20" uuid="4b6497bd-879c-46ff-8275-3720c0dc03ca"/>
+				<textFieldExpression><![CDATA[$F{Sales_Item}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="302" y="15" width="100" height="20" uuid="1e08f037-b088-4827-9ba8-892a96892b99"/>
+				<textFieldExpression><![CDATA[$F{Sales_Quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="15" width="100" height="20" uuid="33541afe-aa69-472c-a648-7024fe1a347f"/>
+				<textFieldExpression><![CDATA[$F{Sales_Phone}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
